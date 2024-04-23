@@ -1,11 +1,11 @@
 part of 'cubit_counter_cubit.dart';
 
-class CubitCounterState {
+class CubitCounterState extends Equatable{
   final int counter;
   final int changesCunter;
-  CubitCounterState({
-    this.counter =0,
-    this.changesCunter =0
+  const CubitCounterState({
+    this.counter = 0,
+    this.changesCunter = 0
   });
   copyWith({
      int? counter,
@@ -14,6 +14,10 @@ class CubitCounterState {
     counter: counter ?? this.counter,
     changesCunter: changesCunter ?? this.changesCunter,
   );
+  
+  @override
+  // TODO: implement props
+  List<Object> get props =>[ counter, changesCunter];
 
 }
 
