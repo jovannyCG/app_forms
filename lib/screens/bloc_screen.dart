@@ -9,33 +9,31 @@ class BlocScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => CounterBloc(),
-      child: const _blocView(),
+      child: const _BlocView(),
     );
   }
 }
 
-class _blocView extends StatelessWidget {
-  const _blocView({
-    super.key,
-  });
+class _BlocView extends StatelessWidget {
+  const _BlocView();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: ()  {
-              context.read<CounterBloc>().add( CounterReset());
+          actions: [
+            IconButton(
+              onPressed: () {
+                context.read<CounterBloc>().add(CounterReset());
+              },
+              icon: const Icon(Icons.refresh_rounded),
+            )
+          ],
+          title: context.select(
+            (CounterBloc value) {
+              return Text('bloc counter: ${value.state.changesCunter}');
             },
-            icon: const Icon(Icons.refresh_rounded),
-          )
-        ],
-        title: context.select(( CounterBloc value){
-          return Text('bloc counter: ${value.state.changesCunter}');
-        },
-        
-      )),
+          )),
       body: Center(
           child: context.select(
         (CounterBloc value) => Text('cunter value: ${value.state.counter}'),

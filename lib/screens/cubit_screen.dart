@@ -9,13 +9,13 @@ class CubitScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => CubitCounter(),
-      child: _cubitCounterView(),
+      child: const _CubitCounterView(),
     );
   }
 }
 
-class _cubitCounterView extends StatelessWidget {
-  const _cubitCounterView();
+class _CubitCounterView extends StatelessWidget {
+  const _CubitCounterView();
 
   @override
   Widget build(BuildContext context) {
