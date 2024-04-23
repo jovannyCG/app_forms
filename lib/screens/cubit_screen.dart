@@ -8,7 +8,7 @@ class CubitScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(onPressed: ()=>{}, icon: Icon(Icons.refresh_rounded),)
+          IconButton(onPressed: ()=>{}, icon: const Icon(Icons.refresh_rounded),)
         ],
         title: const Text('cubit counter'),
       ),
