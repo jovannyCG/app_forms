@@ -5,7 +5,7 @@ part of 'counter_bloc.dart';
   final int changesCunter;
 
   const CounterState({
-    this.counter = 0,
+    this.counter = 10,
     this.changesCunter = 0
   });
   
