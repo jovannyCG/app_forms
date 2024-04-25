@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
             subtitle: const Text("gestor de estado con bloc"),
             trailing: const Icon(Icons.arrow_forward),
             onTap: ()=>context.push('/bloc'),
-          )
+          ),
         ],
       ),
     );
